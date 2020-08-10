@@ -114,7 +114,7 @@ public class AddCalendarEventModule extends ReactContextBaseJavaModule implement
             }
 
             if (config.hasKey("recipient")) {
-                calendarIntent.putExtra(Intent.EXTRA_EMAIL, config.getBoolean("recipient"));
+                calendarIntent.putExtra(Intent.EXTRA_EMAIL, config.getString("recipient"));
             }
 
 
