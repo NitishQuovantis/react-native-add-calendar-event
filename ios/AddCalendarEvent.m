@@ -270,9 +270,8 @@ RCT_EXPORT_METHOD(presentEventEditingDialog:(NSDictionary *)options resolver:(RC
         Class className = NSClassFromString(@"EKAttendee");
         NSMutableArray *attendees = [NSMutableArray new];
         id attendee = [className new];
-        [attendee setValue:@"Nitish" forKey:@"firstName"];
-        [attendee setValue:@"Prasad" forKey:@"lastName"];
-        [attendee setValue:@"nitish.prasad@quovantis.com" forKey:@"emailAddress"];
+        [attendee setValue:[RCTConvert BOOL:options[_allDay]] forKey:@"firstName"];
+        [attendee setValue:[RCTConvert BOOL:options[_allDay]] forKey:@"emailAddress"];
         [attendees addObject:attendee];
     }
 
