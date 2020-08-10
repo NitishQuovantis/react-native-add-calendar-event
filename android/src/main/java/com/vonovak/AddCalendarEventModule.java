@@ -113,6 +113,10 @@ public class AddCalendarEventModule extends ReactContextBaseJavaModule implement
                 calendarIntent.putExtra("allDay", config.getBoolean("allDay"));
             }
 
+            if (config.hasKey("recipient")) {
+                calendarIntent.putExtra(Intent.EXTRA_EMAIL, config.getBoolean("recipient"));
+            }
+
 
             getReactApplicationContext().startActivityForResult(calendarIntent, ADD_EVENT_REQUEST_CODE, Bundle.EMPTY);
         } catch (Exception e) {
