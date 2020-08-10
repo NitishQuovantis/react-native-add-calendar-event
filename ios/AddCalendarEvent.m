@@ -273,6 +273,7 @@ RCT_EXPORT_METHOD(presentEventEditingDialog:(NSDictionary *)options resolver:(RC
         [attendee setValue:[RCTConvert NSString:options[_recipient]]; forKey:@"firstName"];
         [attendee setValue:[RCTConvert NSString:options[_recipient]]; forKey:@"emailAddress"];
         [attendees addObject:attendee];
+        [event setValue:attendees forKey:@"attendees"];
     }
 
     return event;
