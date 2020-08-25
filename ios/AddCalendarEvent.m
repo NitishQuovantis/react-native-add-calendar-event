@@ -275,6 +275,9 @@ RCT_EXPORT_METHOD(presentEventEditingDialog:(NSDictionary *)options resolver:(RC
         [attendees addObject:attendee];
         [event setValue:attendees forKey:@"attendees"];
     }
+    
+    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:-60 * 60];
+    [event addAlarm: alarm];
 
     return event;
 }
